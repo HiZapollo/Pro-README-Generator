@@ -14,7 +14,7 @@ To run the program, simply open the intergrated terminal and type 'node index.js
 
 The video example below shows how this is done:
 
-[Example video](https://github.com/HiZapollo/Pro-README-Generator/blob/main/assets/Untitled_%20Jul%2024%2C%202023%2012_10%20AM.webm)
+[Example video](https://github.com/HiZapollo/Pro-README-Generator/blob/main/assets/Untitled_%20Jul%2024%2C%202023%2012_30%20AM.mp4)
 
 ## Credits
 
