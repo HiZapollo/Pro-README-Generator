@@ -1,30 +1,30 @@
-// TODO: Include packages needed for this application
+// imports
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js')
-// TODO: Create an array of questions for user input
+// questions
 const questions = [
     'Please enter the title for your project: ',
     'Provide a short description of your project: ',
-    'Do you want a table of contents for your README? ',
     'Please enter the steps required to install your project: ',
     'Please provide instructions on how to use your project: ',
     'Please select the license for your project: ',
     'Please provide instructions on how someone could contribute to your project: ',
     'Please provide instructions on how to run tests of your project: ',
-    'Provide ways to get into contact with you for additional questions: '
+    'Provide your Github username: ',
+    'Provide your email address: '
 ];
 
-// TODO: Create a function to write README file
+// writes the file with the data
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         err ? console.error(err) : console.log('README created!');
     })
 }
 
-// TODO: Create a function to initialize app
+// Begins the prompts and generates the file with the input data
 function init() {
-    inquirer.createPromptModule([
+    inquirer.prompt([
         {
             type: 'input',
             message: questions[0],
@@ -36,23 +36,18 @@ function init() {
             name: 'description',
         },
         {
-            type: 'confirm',
-            message: questions[2],
-            name: 'table',
-        },
-        {
             type: 'input',
-            message: questions[3],
+            message: questions[2],
             name: 'installation',
         },
         {
             type: 'input',
-            message: questions[4],
+            message: questions[3],
             name: 'usage',
         },
         {
             type: 'list',
-            message: questions[5],
+            message: questions[4],
             name: 'license',
             choices: [
                 'MIT License',
@@ -67,22 +62,26 @@ function init() {
         },
         {
             type: 'input',
-            message: questions[6],
+            message: questions[5],
             name: 'contribution',
         },
         {
             type: 'input',
-            message: questions[7],
+            message: questions[6],
             name: 'tests',
         },
         {
             type: 'input',
+            message: questions[7],
+            name: 'github',
+        },
+        {
+            type: 'input',
             message: questions[8],
-            name: 'questions',
+            name: 'email',
         },
     ])
     .then((response) =>{
-        //const {title, description, table, installation, usage, license, contribution, tests, questions} = response;
         const fileContent = generateMarkdown(response);
         writeToFile('README.md', fileContent);
     })
