@@ -2,7 +2,7 @@
 
 ## Description
 
-Generates README.md files based on user input
+an example
 
 ## Table of Contents
 
@@ -13,11 +13,11 @@ Generates README.md files based on user input
 
 ## Installation
 
-Install files from repo, and dependencies from terminal
+n/a
 
 ## Usage
 
-Run 'node index.js' in terminal
+n/a
 
 ## License
 
